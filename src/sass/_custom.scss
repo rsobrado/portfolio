@@ -7,12 +7,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-nav{
-	z-index: 1;
-}
-
 a{
 	color: steelblue;
+}
+
+em {
+	height: 10px;
+	position: relative;
+	z-index: 9;
+	text-shadow: -3px 3px 1px white;
+  // -webkit-text-stroke: 1px white;
+	&:after {
+    background: white;
+    content: "";
+    width: 110%;
+    position: absolute;
+    top: 14px;
+    left: -10px;
+    height: 11px;
+    z-index: -1;
+	}
+}
+
+nav{
+	position: relative;
+	z-index: 1;
+	min-height: 550px !important;
+
+  @media screen and (min-width: $screen-md-min) {
+		position: fixed !important;
+  }
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -173,8 +197,11 @@ img{
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,.12);
   border-radius: .125rem;
-  padding: 0 50px;
-	margin: 50px 0 50px 50px;
+	margin-bottom: 50px;
+  @media screen and (min-width: $screen-md-min) {
+		margin: 50px 0 50px 50px;
+		padding: 0 50px;
+  }
 	.card{
 		padding: 0 !important;
 		margin: 0 0 60px !important;
@@ -188,6 +215,7 @@ img{
 		position: relative;
 		font-family: 'Anton', sans-serif;
 		font-size: 1.6rem;
+		box-shadow: inset 0 -4px 5px -5px steelblue;
 	}
 }
 
