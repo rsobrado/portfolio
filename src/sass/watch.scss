@@ -75,7 +75,7 @@
   top: 0; left: 0; bottom: 0; right: 0;
 
   .watch-controls{
-    margin: 20px 20px 0 0;
+    margin: 10% 13% 0 0;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -83,7 +83,8 @@
     justify-content: flex-end;
     i{
       color: rgba(red,0.8);
-      margin-right: 12px; 
+      margin-right: 7px; 
+      font-size: 0.8rem;
 
       &.timer{
         color: rgba(red,0.4);
