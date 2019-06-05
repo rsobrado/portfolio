@@ -118,6 +118,19 @@ img{
 	.title{
 		padding: 15px 30px;
 		text-align: right;
+		position: relative;
+		&:after {
+			background: currentColor;
+			content: "";
+			width: 60%;
+			position: absolute;
+			top: 48%;
+			right: 10px;
+			height: 3px;
+			z-index: -1;
+			transform: skewX(-20deg);
+			opacity: 0.05;
+		}
 	}
   &.alo{
 		background: $gray-gradient;
@@ -196,6 +209,9 @@ img{
 		padding: 0;
 	}
 }
+main{
+	perspective: 800px;
+	transform-style: preserve-3d;
 
 .content{
   position: relative;
@@ -208,13 +224,66 @@ img{
   border: 1px solid rgba(0,0,0,.12);
   border-radius: .125rem;
 	margin-bottom: 50px;
+	transition: all .2s ease-in;
   @media screen and (min-width: $screen-md-min) {
+		transform: rotate3d(10, 10, 10, 7deg);
 		margin: 50px 0 50px 50px;
 		padding: 0 50px;
-  }
+	}
+	&:hover{
+		@media screen and (min-width: $screen-md-min) {
+			transform: rotate3d(0, 0, 0, 0);
+			margin: 50px 0 50px 50px;
+			padding: 0 50px;
+		}
+	}
+	
+}
 	.card{
 		padding: 0 !important;
 		margin: 0 0 60px !important;
+		clip-path: polygon(25% -2px, 100% -2px, 75% 102%, -2px 102%);
+		
+		transition: 0.2s ease-in-out all;
+		&:hover{
+			clip-path: polygon(-2px -2px, 102% -2px, 102% 102%, 0 102%);
+			.description{
+				opacity: 1;
+			}
+		}
+		.description{
+			align-items: center;
+			background: rgba($blue-primary,0.9);
+			color: white;
+			display: flex;
+			flex-direction: column;
+			height: calc(100% - 45px);
+			justify-content: center;
+			margin-top: 45px;
+			opacity: 0;
+			padding: 15px 15px 0;
+			position: absolute;
+			transition: 0.2s ease-in-out all;
+			width: 100%;
+			z-index: 1;
+			a{
+				color: yellow;
+				box-shadow: 0px 3px 1px -1px yellow, 0px 10px 3px -5px black;
+				margin-top: 8px;
+				padding: 10px;
+				text-decoration: none;
+				transition: 0.2s ease-in-out all;
+				font-size: .8rem;
+				&:hover{
+					box-shadow: 0px 7px 3px -5px yellow, 0px 10px 3px -6px black;
+				}
+			}
+			p{
+				font-size: .8rem;
+				line-height: 1;
+				text-align: center;
+			}
+		}
 	}
 	.content-header{
 		border-bottom: solid 2px steelblue;
@@ -250,7 +319,7 @@ img{
     }
     a{
       color: #000;
-      opacity: 0.55;
+			opacity: 0.55;
       &:hover{
         opacity: 1;
       }
@@ -279,14 +348,30 @@ img{
 	align-items: baseline;
 	width: 100%;
 	justify-content: flex-end;
-	margin: 20px 0; 
-	opacity: .4;;
+	margin: 0; 
+	opacity: .4;
 	transform: scale(0.8);
+	position: relative;
+	bottom: 0;
+	padding-bottom: 220px;
+  @media screen and (min-width: $screen-md-min) {
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
+		padding-bottom: 0px;
+	}
 	.social-icons{
 		margin-right: 25px;
 	}
 }
-
 .text-muted{
 	color: #AebFc0!important;
+}
+
+.techStack{
+	margin-bottom: 5px; 
+	.badge{
+		padding-top: 3px;
+		margin: 0 10px 8px 0;
+	}
 }
