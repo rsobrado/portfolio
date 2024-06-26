@@ -6,6 +6,13 @@
 	-moz-osx-font-smoothing: grayscale
 }
 
+
+ul{
+	margin: 0;
+	padding: 0;
+list-style: none;
+}
+
 nav {
 	z-index: 1
 }
@@ -18,55 +25,28 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 	display: block
 }
 
+html{
+	background: #0c3245 url(../img/pattern.png);
+	line-height: 1; 
+	box-shadow:  inset  20px 5px 55px black;
+	background-blend-mode: soft-light;
+	background-size: 200px;
+	background-attachment: fixed
+}
 body {
-	background: #0c3245 url(../img/bg-paper01.jpg);
+	background: transparent url(../img/bg-paper01.jpg);
+	box-shadow:   0 25px 25px black;
+
 	line-height: 1;
 	background-size: cover;
-	background-position-y: 102px;
+	background-position-y: 182px;
+	box-shadow:   0 0 25px black;
 	background-repeat: no-repeat;
 	background-attachment: fixed
 }
 
 img {
 	width: 100%
-}
-
-.mt-7 {
-	margin-top: 7rem!important
-}
-
-.mt-11 {
-	margin-top: 10rem!important
-}
-
-@-webkit-keyframes color-tilt {
-	0% {
-		opacity: 1
-	}
-
-	to {
-		opacity: .45
-	}
-}
-
-@keyframes color-tilt {
-	0% {
-		opacity: 1
-	}
-
-	to {
-		opacity: .45
-	}
-}
-
-.animation--tilt {
-	-webkit-animation-name: color-tilt;
-	animation-name: color-tilt;
-	-webkit-animation-duration: 1.6s;
-	animation-duration: 1.6s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-	transition-timing-function: ease-in-out
 }
 
 .card {
@@ -89,13 +69,17 @@ img {
 	font-family: Dosis,sans-serif;
 	font-size: 1rem;
 	line-height: 1.1;
-	margin: 0
+	margin: 0;
+	text-align: center;
+	opacity: 0.45;
 }
 
 .card h3 {
 	font-family: Yesteryear,cursive;
 	font-size: 1.85rem;
-	line-height: 1
+	line-height: 1;
+    color: rgb(150, 30, 90);
+    text-align: center;
 }
 
 .card p {
@@ -119,15 +103,15 @@ img {
 	z-index: -1;
 	position: absolute;
 	content: "";
-	left: 10px;
+	left: 20px;
 	width: 50%;
 	bottom: 15px;
-	max-width: 300px;
+	max-width: 80px;
 	background: #000;
-	box-shadow: 0 17px 5px rgba(0,0,0,.8);
+	box-shadow: 0 11px 15px 6px rgba(0,0,0,.8);
 	-webkit-transform: rotate(-3deg);
 	transform: rotate(-3deg);
-	height: 4px
+	height: 14px
 }
 
 .card.alo:after {
@@ -139,35 +123,23 @@ img {
 
 .card.alo .tape {
 	position: absolute;
-	color: #fff;
-	top: -2px;
-	left: -10%;
-	-webkit-transform: rotate(-20deg);
-	transform: rotate(-20deg)
+    color: #fff;
+    top: -2px;
+    left: -6%;
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-40deg);
 }
 
 .card.alo .tape .message {
-	background-color: #dc143c;
 	padding: 10px 30px 1px;
-	position: relative
-}
+	position: relative;
 
-.card.alo .tape .message:after {
-	z-index: -1;
-	position: absolute;
-	content: "";
-	right: 1px;
-	left: auto;
-	width: 40%;
-	max-width: 300px;
-	background: #000;
-	box-shadow: 0 10px 7px #000;
-	-webkit-transform: rotate(175deg);
-	transform: rotate(175deg);
-	height: 6px;
-	top: 9px
+	background: transparent url(/img/duct_tape.png);
+    background-position-x: 0;
+    background-position-y: -5px;
+    background-size: 112%;
+    background-repeat: no-repeat;
 }
-
 .card.alo .tape h1 {
 	font-size: 20px;
 	letter-spacing: 1px;
@@ -175,24 +147,18 @@ img {
 }
 
 .card.alo .tape.default {
-	right: 10px;
-	left: auto;
-	-webkit-transform: rotate(40deg);
-	transform: rotate(40deg)
+	transform: rotate(40deg);
+	right: -20px;
+    top: 0px;
+
 }
 
 .card.alo .tape.default .message {
-	background-color: #4682b4
-}
-
-.card.alo .tape.default .message:after {
-	right: 60%;
-	-webkit-transform: rotate(195deg);
-	transform: rotate(195deg)
+background-color: transparent
 }
 
 .card.alo .name {
-	margin-bottom: 18px;
+	margin-bottom: 8px;
 	font-size: 2.8rem
 }
 
@@ -211,7 +177,7 @@ img {
 	border: 1px solid rgba(0,0,0,.12);
 	border-radius: .125rem;
 	padding: 0 50px;
-	margin: 50px 0 50px 50px
+	margin: 50px 0 ;
 }
 
 .content .card {
@@ -222,7 +188,7 @@ img {
 .content .content-header {
 	border-bottom: 2px solid #4682b4;
 	color: #0c3245;
-	text-align: right;
+	text-align: left;
 	margin: 60px auto;
 	padding: 20px 30px;
 	position: relative;
@@ -234,7 +200,7 @@ img {
 	display: flex;
 	flex-direction: row;
 	padding: 0;
-	margin: 18px 0 0
+	margin: 18px 0 0;
 }
 
 .social-icons .social-icon,.stack .social-icon {
@@ -250,7 +216,7 @@ img {
 }
 
 .social-icons .social-icon a,.stack .social-icon a {
-	color: #000;
+	/* color: rgba(255,125,50, 0.6); */
 	opacity: .55
 }
 
@@ -385,13 +351,13 @@ img {
 	border-radius: 30px;
 	opacity: .4;
 	pointer-events: none
-}
+ }
 
 .about {
 	height: 165px;
 	font-size: .8rem;
 	padding: 10px 25px;
-	margin: 5px 0;
+	margin: 0;
 	overflow-y: auto;
 	border-radius: 35px;
 	color: #fff
@@ -407,4 +373,112 @@ img {
 	font-size: .9rem;
 	font-weight: 600;
 	top: 18px
+}
+
+.greetings{
+	position: fixed;
+	top:-30px;
+	max-width: 420px;
+	right: 5%;
+}
+
+.card-footer{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-top: 10px;
+	background-color: rgba(255,255,255,0.25);
+}
+
+.card-footer .social-icons{
+	margin: 0;
+}
+
+.tech-skills{
+    display: flex;
+    list-style: none;
+    justify-content: end;
+}
+
+.skill {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.techStack{
+	display: flex;
+}
+
+.techStack > span{
+	margin-left: 8px;
+	opacity: .6;
+}
+
+.visit-url{
+	padding: 10px 15px;
+	background-color: #adff2f;
+	border-radius: 20px;
+	position: absolute;
+	right: -15px;
+	bottom: -15px;
+    box-shadow: inset 0 5px 8px white, inset 0 0 8px green, inset 0 0 16px yellow, 0 4px 14px -10px black;
+	border: 0.005rem solid rgba(0,0,0,.015);
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+	
+}
+.visit-url:hover{
+	background-color: #cedb25;
+	box-shadow: inset 0 5px 8px white, inset 0 0 8px green, inset 0 0 16px yellow, 0 4px 24px -10px #adff2f;
+	border: 0.005rem solid rgba(0,0,0,.015);
+	
+}
+
+.visit-url a{
+	transition: all 0.1s ease-in-out;
+	color: #ebebeb;
+	color:#000;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+
+.visit-url i{
+	margin-right: 5px;
+}
+
+.title a{
+	font-size: 22px;
+}
+
+.description{
+	padding: 18px 8px;
+	background: rgba(50, 50, 10, 0.045);
+}
+
+.footer{
+	padding: 50px 20px;
+	box-shadow: inset 0 0 100px black;
+	width: 100vw;
+}
+.contact .social-icons{
+	text-align: right;
+	justify-content: end;
+	margin-right: 15px;
+}
+
+.contact .social-icons a{
+	text-align: right;
+	justify-content: end;
+	color: rgba(240,248,255,.8);
+	margin-right: 10px;
+}
+
+.contact h3{
+	padding-right: 20px;
+	color: rgba(240,248,255,.8);
+	font-family: Yesteryear,cursive;
+	text-align: right;
+}
+.card.alo .tape .message:after {
+display: none !important;
 }
